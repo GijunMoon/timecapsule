@@ -1,0 +1,58 @@
+{
+  "name": "time-capsule",
+  "description": "Write your future self a letter",
+  "version": "1.0.0",
+  "author": "Tim Chang <timchang.tcc@gmail.com>",
+  "dependencies": {
+    "@emotion/core": "^10.0.2",
+    "@emotion/styled": "^10.0.2",
+    "@reach/router": "^1.2.1",
+    "animateplus": "^2.1.1",
+    "gatsby": "^2.0.53",
+    "gatsby-image": "^2.0.20",
+    "gatsby-plugin-google-analytics": "^2.0.8",
+    "gatsby-plugin-layout": "^1.0.10",
+    "gatsby-plugin-manifest": "^2.0.9",
+    "gatsby-plugin-offline": "^2.0.16",
+    "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-sharp": "^2.0.17",
+    "gatsby-source-filesystem": "^2.0.8",
+    "gatsby-transformer-sharp": "^2.1.8",
+    "lottie-web": "^5.4.2",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "react-helmet": "^5.2.0",
+    "react-testing-library": "^5.4.0",
+    "react-transition-group": "^2.5.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "deploy": "gatsby build --prefix-paths && s3-deploy './public/**' --cwd './public/' --bucket thisnextyear.com  --deleteRemoved --gzip && npm run clear",
+    "clear": "aws-cloudfront-invalidate E1637DSVT3IWD2",
+    "format": "prettier --write \"src/**/*.js\"",
+    "test": "jest",
+    "test-watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-preset-gatsby": "^0.1.6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "jest-dom": "^3.0.0",
+    "prettier": "^1.15.2",
+    "react-test-renderer": "^16.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/timc1/time-capsule"
+  }
+}
